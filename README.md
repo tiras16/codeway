@@ -36,6 +36,15 @@ Used to keep the POC short:
 
 ## Setup
 
+### Clone on a new machine
+
+```bash
+git clone <your-repo-url>
+cd codeway-flutter
+```
+
+Run all Flutter commands from the project root (the folder containing `pubspec.yaml`).
+
 ### Prerequisites
 
 - Flutter SDK installed
@@ -51,6 +60,12 @@ sudo gem install cocoapods
 
 ```bash
 flutter pub get
+```
+
+If platform folders are missing in your clone for any reason, regenerate them once:
+
+```bash
+flutter create .
 ```
 
 ### iOS (first time)
