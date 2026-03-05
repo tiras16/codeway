@@ -17,23 +17,6 @@ This is a small Flutter POC for the Codeway case study: **Image Processing & Ana
 - **Multi-page PDF**: add/remove/reorder pages, open PDF
 - **Batch processing**: multi-select from gallery, queue processing, progress + summary screen
 
-## Tech stack / dependencies
-
-Required by case:
-
-- `get` (state management, no `setState`)
-- `google_mlkit_face_detection`
-- `google_mlkit_text_recognition`
-- `hive` / `hive_flutter` (local history metadata)
-
-Used to keep the POC short:
-
-- `image_picker` (camera/gallery)
-- `image` (simple crop + grayscale + compositing)
-- `pdf` (PDF export)
-- `open_filex` (open PDFs)
-- `path_provider` + `path` (file paths)
-
 ## Setup
 
 ### Clone on a new machine
@@ -50,11 +33,6 @@ Run all Flutter commands from the project root (the folder containing `pubspec.y
 - Flutter SDK installed
 - Xcode (for iOS)
 - Android Studio + SDK (for Android)
-- CocoaPods (iOS):
-
-```bash
-sudo gem install cocoapods
-```
 
 ### Install dependencies
 
@@ -62,21 +40,11 @@ sudo gem install cocoapods
 flutter pub get
 ```
 
-If platform folders are missing in your clone for any reason, regenerate them once:
+Regenerate platform folders once:
 
 ```bash
 flutter create .
 ```
-
-### iOS (first time)
-
-```bash
-cd ios
-pod install --repo-update
-cd ..
-```
-
-Then open `ios/Runner.xcworkspace` and set a **Development Team** for signing if running on a real device.
 
 ### Run
 
@@ -91,8 +59,3 @@ flutter run
 - **Multi-page PDF**: in Document Result, tap **Add Page**, reorder, remove, then **Open PDF**
 - **Batch**: Capture → **Batch (Bonus)** → select multiple images → wait → review screen → Done
 
-## Notes (POC trade-offs)
-
-- The app aims to be **lean** and **interview-explainable**.
-- Face vs Document routing is best-effort (good enough for a POC).
-- Document pipeline is intentionally simple (no heavy CV math).
